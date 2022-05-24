@@ -28,6 +28,10 @@
             var interfaceName = ResourceKey("SideMenu." + rinterface.InterfaceKey).ToString();
             if (interfaceName == "")
             {
+                interfaceName = DNNrocketUtils.GetResourceString(rinterface.TemplateRelPath + "/App_LocalResources", "SideMenu." + rinterface.InterfaceKey, "Text", DNNrocketUtils.GetCurrentCulture());
+            }
+            if (interfaceName == "")
+            {
                 interfaceName = rinterface.InterfaceKey;
             }
             if (submenu)
